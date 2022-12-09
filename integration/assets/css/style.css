@@ -32,11 +32,76 @@ body {
 
 /* main */
 
+.partner-link {
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+.external-link {
+	position: relative;
+	z-index: 20;
+}
+
 .stars i {
+	margin-left: -3px;
 	color: var(--vw-yellow);
 }
 
+.partner-info {
+	font-size: 1rem;
+}
+
 /* responsive  */
+
+@media (min-width: 992px) {
+	.sports-title + div {
+		min-width: 140px;
+	}
+
+	.vertical .row > .col-lg {
+		flex: 0 0 auto;
+		width: 100%;
+	}
+
+	.vertical .card-body > .d-flex ,
+	.vertical .col-left,
+	.vertical .col-right,
+	.vertical .review {
+		display: flex !important;
+	}
+
+	.vertical .col-left > h4 {
+		margin-right: 1rem !important;
+	}
+
+	.vertical .col-left > .external-link {
+		margin-right: 1.5rem !important;
+	}
+
+	.vertical .review {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+	}
+
+	.vertical .stars {
+		margin-right: 0.5rem !important;
+	}
+
+	.vertical .partner-info {
+		margin-bottom: 0 !important;
+		margin-right: 1rem !important;
+	}
+
+	.vertical .partner-info br {
+		display: none !important;
+	}
+
+	.vertical .col-right > .external-link {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+	}
+}
 
 @media (max-width: 1199px) {
 	.container {
@@ -45,11 +110,16 @@ body {
 }
 
 @media (max-width: 991px) {
-	.wTitle h2 {
+	.sports-title {
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+	.sports-title h2 {
 		font-size: 1.2rem;
 	}
 
-	.wTitle img {
+	.sports-title img {
 		max-width: 30px;
 	}
 }
