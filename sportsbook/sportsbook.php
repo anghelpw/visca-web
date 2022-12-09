@@ -121,6 +121,7 @@ function sportsbook_box_html( $post ) {
 		?>
 			<div class="sportsbook_box_html">
 				<select name="sportsbook_field" id="sportsbook_field" class="postbox">
+					<option value=""><?= __( 'None', 'sportsbook' ) ?></option>
 					<?php foreach ( $items as $k => $v ) : ?>
 						<option value="<?= $k ?>" <?php selected( $value, $k ) ?> class="item"><?= $v ?></option>
 					<?php endforeach ?>
