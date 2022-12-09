@@ -1,0 +1,62 @@
+/* variables */
+
+:root {
+	--vw-black: #000;
+	--vw-white: #fff;
+	--vw-grey: #f9f8f8;
+	--vw-yellow: #f7931c;
+}
+
+/* global */
+
+body {
+	background-color: var(--vw-grey);
+}
+
+/* helpers */
+
+.hidden {
+	display: none;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+/* header */
+
+.site-header {
+	background-color: var(--vw-black);
+	min-height: 60px;
+}
+
+/* main */
+
+.stars i {
+	color: var(--vw-yellow);
+}
+
+/* responsive  */
+
+@media (max-width: 1199px) {
+	.container {
+		max-width: 1140px !important;
+	}
+}
+
+@media (max-width: 991px) {
+	.wTitle h2 {
+		font-size: 1.2rem;
+	}
+
+	.wTitle img {
+		max-width: 30px;
+	}
+}
+
+@media (max-width: 380px) {
+	html, body {
+		width: 380px;
+		overflow-x: auto;
+	}
+}

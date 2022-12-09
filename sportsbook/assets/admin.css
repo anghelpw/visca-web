@@ -1,0 +1,12 @@
+.sportsbook_box_html {
+	margin: 0 -8px;
+}
+
+.sportsbook_box_html select {
+	width: 100%;
+	min-width: auto;
+	border: 1px solid #757575 !important;
+	border-radius: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
