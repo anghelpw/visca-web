@@ -12,7 +12,6 @@ $(function() {
 			if ( clicked_time % 2 == 0 ) {
 				$(this).removeClass(position);
 
-
 				$('.sort-asc').addClass('hidden');
 				$('.sort-alpha').removeClass('hidden');
 
