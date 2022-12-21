@@ -32,3 +32,35 @@ function upload_latest_file($host, $user, $pass) {
 	$upload_to = '/news.php';
 	return (@ftp_fput($conn, $upload_from, $upload_to, FTP_ASCII));
 }
+
+// Improved function to uploads from an open file to the FTP server.
+function upload_latest_file_extended($host, $user, $pass) {
+	$out = false;
+
+	// open some file for reading
+	$file = __DIR__ . '/files/latest-news.php';
+
+	if ( is_file($file) ) {
+		$fp = fopen($file, 'r');
+
+		// set up basic connection
+		$ftp = @ftp_connect($host, 21, 30);
+
+		// login with username and password
+		$login_result = @ftp_login($ftp, $user, $pass);
+
+		if ( $login_result ) {
+			// try to upload $file
+			if ( @ftp_fput($ftp, $file, $fp, FTP_ASCII) ) {
+				$out = true;
+			}
+
+			// close the connection and the file handler
+			ftp_close($ftp);
+		}
+
+		fclose($fp);
+	}
+
+	return $out;
+}
