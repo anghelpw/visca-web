@@ -20,37 +20,26 @@ $orange_words = array(
 
 // answer
 
-function get_combinations($arr) {
-	$out = array();
-	$i = 0;
+function get_similarity($words) {
+	$result = array();
+	$count = 0;
 
-	foreach ( $arr as $v1 ) {
-		foreach ( $arr as $v2 ) {
-			if ( $v1 == $v2 ) {
+	// compare each word in array
+	foreach ( $words as $word_a ) {
+		foreach ( $words as $word_b ) {
+			if ( $word_a == $word_b ) {
 				continue;
 			}
 
-			$out[ similar_percentage($v1, $v2) ] = "{$v1}, {$v2}";
+			$result[ similar_percentage($word_a, $word_b) ] = "{$word_a}, {$word_b}";
 		}
 	}
 
-	krsort($out);
+	// sort desc comparations betwwen words
+	krsort($result);
 
-	if ( !empty($out) ) {
-		foreach ( $out as $v ) {
-			if ( $i >= 2 ) {
-				break;
-			}
-
-			$words[] = $v;
-
-			$i++;
-		}
-
-		return $words;
-	}
+	// display the 2 words with the highest similarity rate
+	return current($result);
 }
 
-var_dump(
-	get_combinations($orange_words)
-);
+echo get_similarity($orange_words);

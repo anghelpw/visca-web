@@ -3,6 +3,9 @@
 // This file is large and heavy, as it contains a list of articles and their content.
 // The content of this file is not provided, as it is not necessary to do this test.
 
+ini_set('memory_limit', '-1'); // for unlimited memory limit
+ini_set('max_execution_time', '0'); // for infinite time of execution 
+
 $ftp_servers = array(
 	array('ftp.site1.com', 'sEt7UMac', '&Re2adav9n'),
 	array('85.98.102.10', 'h5THaW2U', 'p@U5Eb5phu"'),
